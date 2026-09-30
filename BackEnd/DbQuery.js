@@ -51,6 +51,6 @@ app.get('/protected',MiddleWare,(req,res)=>{
     res.status(200).json('Authenticated!');
 })
 
-app.listen(5050, () => {
+app.listen(process.env.PORT || 5050, () => {
     console.log('Server started!');
 });
