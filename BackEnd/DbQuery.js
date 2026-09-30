@@ -50,7 +50,4 @@ app.post('/adduser', (req, res) => {
 app.get('/protected',MiddleWare,(req,res)=>{
     res.status(200).json('Authenticated!');
 })
-
-app.listen(process.env.PORT || 5050, () => {
-    console.log('Server started!');
-});
+export default app;
