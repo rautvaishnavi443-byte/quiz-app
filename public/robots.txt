@@ -1,0 +1,113 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:
+
+
+return {question : q.question, correct : q.correct_answer, inc1 : q.incorrect_answers[0], inc2 : q.incorrect_answers[1], inc3 : q.incorrect_answers[2]}
+
+
+export function Quiz() {
+
+    // State////////////////////////
+    let [timeBool, setTimeBool] = useState(true);
+    let [bool, setBool] = useState(true);
+    let [ans, setAns] = useState('null');
+    let [correctAns , setCorrectAns] = useState('null');
+    let [i, setI] = useState(0);
+
+    //selector/////////////////
+    const quiz = useSelector(state => state.questions);
+    let num = [1, 2, 3, 4];
+    num = num.sort(() => Math.random() - 0.5);
+    console.log(num)
+    console.log(quiz);
+    //color function//////////
+
+    const BtnFuction = (Uans) => {
+        setAns(Uans);
+        console.log(Uans)
+        setBool(false);
+        
+        console.log(correctAns)
+        
+        if(Uans===correctAns){
+            document.getElementById("btn").style.backgroundColor = '#4ea64e7d';
+        }else{
+            document.getElementById("btn").style.backgroundColor = 'rgba(255, 135, 135, 0.43)';
+        }
+
+        if(bool===false){
+            document.getElementById("")
+        }
+    }
+
+    useEffect(()=>{
+        if(i<quiz.length){
+            setCorrectAns(quiz[i][1][0])
+        }
+    },[i,quiz])
+
+    //return///////////////////
+    function Next() {
+        setI(i => i + 1);
+        setTimeBool(true);
+    }
+    if (quiz.length === 0) {
+        return (
+            <img id="loading" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaW9xM3lwb3M4d2l1MHh6dmU0cjJid3NhZ2h5ZjJlYnc1YzVkdTV3ZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/uFymrKF1jQZ9K/giphy.gif"></img>
+        )
+    } else if(timeBool){
+        { console.log('i=', i, quiz[i][num[0]]) }
+        return (
+            <div id="question-div">
+                <Timer setTimeBool={setTimeBool} Next={Next} timeBool={timeBool} />
+
+                <div>{quiz[i][0]}</div>
+                <div>
+                    <div>
+                        <button
+                            id="btn"
+                            className="q-btn"
+                            value={quiz[i][num[0]]}
+                            onClick={() => BtnFuction(quiz[i][num[0]])}
+
+                            disabled={bool===false}
+                        >
+                            {quiz[i][num[0]]}
+                        </button>
+                    </div>
+                    <div>
+                        <button
+                            id="btn"
+                            value={quiz[i][num[1]]}
+                            onClick={() => BtnFuction(quiz[i][num[1]])}
+                            className="q-btn"
+                            disabled={bool===false}
+                        >{quiz[i][num[1]]}
+                        </button>
+                    </div>
+                    <div>
+                        <button
+                            id="btn"
+                            value={quiz[i][num[2]]}
+                            onClick={() => BtnFuction(quiz[i][num[2]])}
+                            className="q-btn"
+                            disabled={bool===false}
+                        >{quiz[i][num[2]]}
+                        </button>
+                    </div>
+                    <div>
+                        <button
+                            id="btn"
+                            value={quiz[i][num[num[3]]]}
+                            onClick={() => BtnFuction(quiz[i][3])}
+                            className="q-btn"
+                            disabled={bool===false}
+                        >{quiz[i][num[3]]}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        )
+        }
+    }

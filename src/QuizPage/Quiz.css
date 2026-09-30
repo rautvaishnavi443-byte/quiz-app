@@ -1,0 +1,193 @@
+/* #loading{
+    width: 100%;
+    height: 50vw;
+}
+#question-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 7%;
+}
+.q-btn{
+    width: 700px;
+    height: 100px;
+    border: 1px solid  rgb(83, 81, 73);
+    border-radius: 10px;
+    background-color:rgba(255, 251, 230, 0.998);
+    margin-top: 2%;
+}
+#score{
+    align-self: flex-start;
+    margin-left: 5%;
+}
+#last-div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+#msg{
+    justify-self: center;
+    align-self: center;
+    margin-top: 10%;
+}
+#score{
+    display: flex;
+    margin-top: 15%;
+    justify-self: center;
+    align-self: center ;
+    font-size: larger;
+    margin-right: 5%;
+}
+#paragraph{
+    margin-top: 5%;
+}
+.nav-btn{
+    align-self: center;
+    width: 200px;
+}
+#notfound{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+} */
+
+
+/* Box sizing reset for predictable sizing */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(255, 251, 230, 0.422);
+  color: rgb(83, 81, 73);
+  font-family: cursive;
+  margin: 0;
+  padding: 1rem;
+}
+
+/* Loading GIF Container */
+#loading {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 10% auto;
+  object-fit: contain;
+}
+
+/* Question Section Container */
+#question-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 700px;
+  margin: 2rem auto 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/* Question text spacing */
+#question-div > div:nth-child(3) {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 1.5rem 0 1rem 0;
+  line-height: 1.4;
+}
+
+/* Answer Buttons Container Wrapper */
+#question-div > div:nth-child(4) {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Base Question Button Styling */
+.q-btn {
+  width: 100%;
+  min-height: 60px;
+  height: auto;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgb(83, 81, 73);
+  border-radius: 10px;
+  background-color: rgba(255, 251, 230, 0.998);
+  color: rgb(83, 81, 73);
+  font-family: inherit;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 0;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  word-wrap: break-word;
+}
+
+.q-btn:hover:not(:disabled) {
+  background-color: rgba(240, 235, 210, 1);
+  transform: translateY(-1px);
+}
+
+.q-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Final Score / Quiz Completed View */
+#last-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+#msg {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+#paragraph {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+}
+
+#score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  margin: 1rem 0 2rem 0;
+}
+
+.nav-btn {
+  width: 100%;
+  max-width: 200px;
+}
+
+#notfound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+/* Responsive Media Queries for Mobile Screens */
+@media (max-width: 480px) {
+  #question-div {
+    margin-top: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .q-btn {
+    font-size: 1rem;
+    min-height: 50px;
+    padding: 0.6rem 0.8rem;
+  }
+
+  #msg {
+    font-size: 1.25rem;
+  }
+}

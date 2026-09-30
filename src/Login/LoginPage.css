@@ -1,0 +1,105 @@
+/* #login-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.lable{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50%;
+}
+p{
+    font-size: small;
+}
+.ip{
+    width: 120%;
+}
+
+#btn{
+    margin-top: 10%;
+    align-self: center;
+}
+ */
+
+ #login-div {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#login-div form {
+    width: min(90%, 500px);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.lable {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.lable p {
+    font-size: 14px;
+    margin: 0 0 25px 0;
+}
+
+.ip {
+    width: 100%;
+    height: 52px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+#btn {
+    align-self: flex-start;
+    padding: 8px 12px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+
+    #login-div form {
+        width: 80%;
+    }
+
+    .ip {
+        height: 48px;
+        font-size: 18px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+    #login-div {
+        padding: 15px;
+    }
+
+    #login-div form {
+        width: 100%;
+    }
+
+    .ip {
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .lable p {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    #btn {
+        font-size: 16px;
+        padding: 7px 12px;
+    }
+}
