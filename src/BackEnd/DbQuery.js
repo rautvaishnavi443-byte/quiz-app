@@ -41,10 +41,10 @@ app.post('/adduser', (req, res) => {
     db.query(query, values, (err, result) => {
         console.log("Error --->", err);
         if (err) {
-            res.status(400).json(err);
+            return res.status(400).json(err);
         }
         console.log("Result --->", result);
-        res.json(token);///61 line number
+        return res.json(token);///61 line number
     })
 
 })
