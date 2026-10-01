@@ -3,18 +3,21 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 export function Protect({ comp }) {
-    console.log('object');
-    const [isAuthenticated, setAuthentication] = useState(false);
+    console.log(localStorage.getItem('token'));
+    // const [isAuthenticated, setAuthentication] = useState(false);
     const nav = useNavigate();
     const param = {
         headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,
         }
     }
+    let status = 0;
     useEffect(() => {
         async function fetchData() {
             const res = await fetch('https://quiz-app-backend-jet.vercel.app/protected',param)
             .then( data => data );
+            console.log(res);
+            
             if (res.status==200) {
                 nav('/');
             } else {
