@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { adduser } from '../Database/DbServer.js';
+import { adduser } from '../BackEnd/DbServer.js';
 import { useNavigate } from "react-router-dom";
 import './LoginPage.css'
 export function LoginPage() {

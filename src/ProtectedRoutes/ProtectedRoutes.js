@@ -13,7 +13,7 @@ export function Protect({ comp }) {
     }
     useEffect(() => {
         async function fetchData() {
-            const res = await fetch('http://localhost:5050/protected', param)
+            const res = await fetch('https://quiz-app-backend-jet.vercel.app/protected',param)
             .then( data => data );
             if (res.status==200) {
                 nav('/');
