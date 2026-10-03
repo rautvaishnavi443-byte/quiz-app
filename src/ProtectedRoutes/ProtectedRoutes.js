@@ -17,9 +17,7 @@ export function Protect({ comp }) {
             .then( data => data );
             console.log(res);
             
-            if (res.status===200) {
-                nav('/');
-            } else {
+             if (res.status!==200) {
                 alert('Not login');
                 nav('/login');
             }
