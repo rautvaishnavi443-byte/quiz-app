@@ -92,7 +92,7 @@ export function Truefalse() {
                 <div id="score">
                     <Score score={score} length={quiz.length}/>
                 </div>
-                <button className="nav-btn q-btn" onClick={()=>nav('/quizform')}>Home</button>
+                <button className="nav-btn q-btn" onClick={()=>nav('/')}>Home</button>
             </div>
         )
     }
