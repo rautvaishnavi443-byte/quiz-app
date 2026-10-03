@@ -9,6 +9,7 @@ export function Timer({ setTimeBool, Next }) {
             setTimeBool(false);
             clearTimeout(id.current);
             Next();
+            return;
         }
 
         id.current = setTimeout(() => {
