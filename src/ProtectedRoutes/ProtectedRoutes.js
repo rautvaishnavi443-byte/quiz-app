@@ -18,7 +18,7 @@ export function Protect({ comp }) {
             console.log(res);
             
             if (res.status===200) {
-                nav('/quiz');
+                nav('/');
             } else {
                 alert('Not login');
                 nav('/login');
