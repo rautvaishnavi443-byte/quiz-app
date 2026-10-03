@@ -2,7 +2,7 @@ import { useState } from "react"
 import {categories} from './Category.js'
 import "./quizSetting.css";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 export function QuizSetting(){
   const [num , setNum] = useState(0);

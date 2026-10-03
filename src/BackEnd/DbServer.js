@@ -11,11 +11,11 @@ export async function adduser(username,password){
     const data = await fetch('https://quiz-app-backend-jet.vercel.app/login',param)
     .then(data=>data)
     .then(data=>{console.log(data,data.status); status = data.status;return data.json()});
-    if(status==200){
+    if(status===200){
         localStorage.setItem('token',data[0].token);
     }
 
-    if(status==401){
+    if(status===401){
         console.log('User not found');
         const login_data = await fetch('https://quiz-app-backend-jet.vercel.app/adduser',param)
         .then(data=>data)

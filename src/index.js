@@ -1,6 +1,4 @@
-import { QuizSetting } from "./QuizSetting/quizSetting.js";
 import { createRoot } from "react-dom/client";
-import { Quiz } from "./QuizPage/Quiz.js";
 import store from "./Reducers/QuestionsStore.js";
 import { Provider } from "react-redux";
 import { BrowserRouter } from 'react-router-dom';

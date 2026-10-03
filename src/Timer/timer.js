@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
-export function Timer({ setTimeBool, Next ,timeBool}) {
+import { useEffect, useState ,useRef} from "react";
+export function Timer({ setTimeBool, Next }) {
     const [count, setCount] = useState(10);
-    let id = 0;
+    let id = useRef(null);
     useEffect(() => {
-        id = setTimeout(() => {
+        id.current = setTimeout(() => {
             setCount(count => count - 1);
         }, 1000)
 
-        if (count == 0) {
+        if (count === 0) {
             setCount(10);
             setTimeBool(false);
-            clearTimeout(id);
+            clearTimeout(id.current);
             Next();
         }
     }, [count])

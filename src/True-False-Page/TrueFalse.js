@@ -30,7 +30,7 @@ export function Truefalse() {
         setB(false);
         console.log(Uans);
         console.log(quiz[i].correct);
-        if (Uans == quiz[i].correct) {
+        if (Uans === quiz[i].correct) {
             document.getElementById(id).style.backgroundColor = 'rgba(78, 166, 78, 0.43)';
             setScore(score=>score+1);
         }
@@ -49,7 +49,7 @@ export function Truefalse() {
     //return///////////////////////////////////////////////////////
     if (quiz.length === 0) {
         return (
-            <img id="loading" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaW9xM3lwb3M4d2l1MHh6dmU0cjJid3NhZ2h5ZjJlYnc1YzVkdTV3ZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/uFymrKF1jQZ9K/giphy.gif"></img>
+            <img id="loading" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaW9xM3lwb3M4d2l1MHh6dmU0cjJid3NhZ2h5ZjJlYnc1YzVkdTV3ZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/uFymrKF1jQZ9K/giphy.gif" alt="Loading..."></img>
         )
     } else if (i <= quiz.length - 1 && quiz.length !== 0) {
         return (
