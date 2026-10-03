@@ -13,7 +13,7 @@ export function Timer({ setTimeBool, Next }) {
             clearTimeout(id.current);
             Next();
         }
-    }, [count])
+    }, [count,Next,setTimeBool])
 
     return (
         <h4>{count}</h4>

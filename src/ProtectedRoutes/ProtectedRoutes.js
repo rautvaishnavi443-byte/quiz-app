@@ -27,7 +27,7 @@ export function Protect({ comp }) {
         }
         fetchData();
     },
-        [])
+        [nav])
     return(
         comp
     )
