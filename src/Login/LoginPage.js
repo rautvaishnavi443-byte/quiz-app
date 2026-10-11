@@ -23,7 +23,8 @@ console.log("isPassword:", isPassword);
             await adduser(user,pass);
             nav('/');
         }else{
-            alert('Passowrd or Username is incorrect, Username example- Abc Xyz , Password example - abc123 or Abc123')
+            alert("Name: " + isName + "\nPassword: " + isPassword);
+            // alert('Passowrd or Username is incorrect, Username example- Abc Xyz , Password example - abc123 or Abc123')
         }
     }
 
