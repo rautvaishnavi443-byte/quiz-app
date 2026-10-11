@@ -13,7 +13,7 @@ export function LoginPage() {
         );
         const Namepattern = /^[A-Z][a-z]+\s[A-Z][a-z]+$/;
         const PasswordPattern = /^[A-Za-z]+[0-9]{2,}$/;
-        alert(`Name valid: ${isName}\nPassword valid: ${isPassword}`);
+        alert(`Name valid: ${user}\nPassword valid: ${isPassword}`);
         let isName = Namepattern.test(user.trim());
         let isPassword = PasswordPattern.test(pass);
 
