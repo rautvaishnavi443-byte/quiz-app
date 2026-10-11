@@ -15,6 +15,10 @@ export function LoginPage() {
         const PasswordPattern = /^[A-Za-z]+[0-9]{2,}$/;
         let isName = Namepattern.test(user);
         let isPassword = PasswordPattern.test(pass);
+        console.log("User:", JSON.stringify(user));
+console.log("Password:", JSON.stringify(pass));
+console.log("isName:", isName);
+console.log("isPassword:", isPassword);
         if(isName && isPassword){
             await adduser(user,pass);
             nav('/');
